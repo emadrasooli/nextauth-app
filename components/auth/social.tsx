@@ -1,6 +1,6 @@
 "use client"
 
-import { signIn } from "@/auth";
+import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { Button } from "../ui/button";
