@@ -3,6 +3,7 @@ import { Montserrat } from 'next/font/google'
 import "./globals.css";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
+import { Toaster } from "@/components/ui/sonner";
 
 const montserrat = Montserrat({
   subsets: ['latin']
@@ -23,6 +24,7 @@ export default async function RootLayout({
     <SessionProvider session={session}>
       <html lang="en">
         <body className={montserrat.className}>
+          <Toaster />
           {children}
         </body>
       </html>
