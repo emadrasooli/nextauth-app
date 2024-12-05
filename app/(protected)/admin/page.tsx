@@ -1,6 +1,7 @@
 "use client";
 
 import { admin } from "@/actions/admin";
+import { BsPersonBadge } from "react-icons/bs";
 import { RoleGate } from "@/components/auth/role-gate";
 import { FormSuccess } from "@/components/form-success";
 import { Button } from "@/components/ui/button";
@@ -36,10 +37,11 @@ const AdminPage = () => {
 
     return (
         <Card className="w-[600px]">
-            <CardHeader>
-                <p className="text-xl font-semibold text-center">
-                    🔑 Admin
-                </p>
+            <CardHeader className="flex items-center">
+            <div className="flex items-center space-x-2">
+                    <BsPersonBadge className="text-2xl"/>
+                    <p className="text-2xl font-semibold">Admin</p>
+                </div>
             </CardHeader>
             <CardContent className="space-y-4">
                 <RoleGate allowedRole={UserRole.ADMIN}>
