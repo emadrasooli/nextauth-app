@@ -15,8 +15,13 @@ export const getTwoFactorTokenByToken = async (token: string) => {
 export const getTwoFactorTokenByEmail = async (email: string) => {
     try {
         const twoFactorToken = await db.twoFactorToken.findFirst({
-            where: { email }
-        })
+            where: {
+                email,
+                expires: { gte: new Date() },
+            },
+            orderBy: { expires: "desc" }, 
+        });
+        
 
         return twoFactorToken;
     } catch {
